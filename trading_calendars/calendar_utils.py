@@ -10,6 +10,7 @@ from trading_calendars.exchange_calendar_cme import CMEExchangeCalendar
 from trading_calendars.exchange_calendar_bmf import BMFExchangeCalendar
 from trading_calendars.exchange_calendar_lse import LSEExchangeCalendar
 from trading_calendars.exchange_calendar_tsx import TSXExchangeCalendar
+from zipline.utils.calendars.exchange_calendar_shsz import SHSZExchangeCalendar
 from trading_calendars.us_futures_calendar import (
     QuantopianUSFuturesCalendar,
 )
@@ -22,6 +23,7 @@ _default_calendar_factories = {
     'BMF': BMFExchangeCalendar,
     'LSE': LSEExchangeCalendar,
     'TSX': TSXExchangeCalendar,
+    'SHSZ': SHSZExchangeCalendar,
     'us_futures': QuantopianUSFuturesCalendar,
 }
 _default_calendar_aliases = {
@@ -32,6 +34,8 @@ _default_calendar_aliases = {
     'NYMEX': 'CME',
     'ICEUS': 'ICE',
     'NYFE': 'ICE',
+    'SH': 'SHSZ',
+    'SZ': 'SHSZ',
 }
 default_calendar_names = sorted(_default_calendar_factories.keys())
 
